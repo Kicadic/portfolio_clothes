@@ -1,0 +1,334 @@
+/* ------------------------------------------------ */
+/* BASIC SETUP */
+/* ------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color:#f7f7f7;
+  color: #555;
+  font-family: "Lato", "Arial", "sans-serif";
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* ------------------------------------------------ */
+/* REUSABLE COMPONENTS */
+/* ------------------------------------------------ */
+ 
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+section {
+  padding: 80px 0;
+}
+.box {
+  padding: 1%;
+}
+/* ------------------------------------------------ */
+/* headings */
+/* ------------------------------------------------ */
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 240%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+/* ------------------------------------------------ */
+/* HEADER */
+/* ------------------------------------------------ */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.75)),
+    url(./img/amanda-vick-ohWf6YuzOQk-unsplash.jpg);
+    /*Photo by Amanda Vick on Unsplash*/
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.main{
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main h1{
+  margin-bottom:25px;
+}
+/* ------- HEADINGS ------*/
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 240%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 80px;
+  letter-spacing: 1px;
+}
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #94240C;
+  content: " ";
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+/* ------------------------------------------------ */
+/* CONTACT */
+/* ------------------------------------------------ */
+ul > li{
+  list-style: none;
+  float: right;
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+
+ul > li a:link,
+ul > li a:visited{
+  font-size:120%;
+  color:#555;
+}
+
+ul > li a:link,
+ul > li a:visited{
+  font-size:120%;
+  color:#555;
+}
+
+ul > li a:hover,
+ul > li a:active{
+  color:#e7e7e7;
+}
+
+.contact-footer li{
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-footer li a:link,
+.contact-footer li a:visited{
+  font-size:150%;
+  color:#BA2809;
+}
+
+.contact-footer li a:hover,
+.contact-footer li a:active{
+  color:#94240C;
+}
+
+/* ------- BUTTONS ------*/
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+  background-color: #2F100A;
+  border: 2px solid #5F190A;
+  color: #fff;
+  margin-right: 17px;
+}
+.btn:hover,
+.btn:active{
+  background-color: #5F190A;
+  cursor: pointer;
+  border: 2px solid #94240C;
+}
+/* Color pallete: https://paletton.com/#uid=3081q0ksDbWuynkt9i6qh8Zp75P*/
+
+/* ------------------------------------------------ */
+/* GALLERY */
+/* ------------------------------------------------ */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center; /* Wyśrodkowanie galerii */
+}
+
+.gallery img.gallery-image {
+  width: 200px;
+  height: auto;
+  border: 2px solid #1E0C41;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s; /* Efekt powiększenia na hover */
+}
+
+.gallery-color{
+  background-color: #ffffff;
+}
+
+.gallery img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  transition: transform .2s; /* Animation */
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover{
+  opacity:0.8 ;
+}
+
+/* ------------------------------------------------ */
+/* MODAL */
+/* ------------------------------------------------ */
+
+/* Styl dla modala */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+}
+
+/* Obraz w modalnym oknie */
+.modal-content {
+  display: block;
+  margin: 5% auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Przycisk zamknięcia */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* Opis obrazu */
+#caption {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 18px;
+}
+/* ------------------------------------------------ */
+/* ABOUT */
+/* ------------------------------------------------ */
+
+.about{
+  padding-bottom:200px;
+}
+/* ------------------------------------------------ */
+/* FOOTER */
+/* ------------------------------------------------ */
+footer {
+  background-color: #333;
+  padding: 50px;
+  font-size: 80%;
+  display: flex;
+  align-items: center; 
+  gap: 10px; /* Odstęp między elementami */
+}
+
+.dark-text{
+  color:#333;
+}
+footer ul p{
+  color: #fff;
+}
+/* ------------------------------------------------ */
+/* HOW IT WORKS? */
+/* ------------------------------------------------ */
+.step{
+  padding: 1.5%;
+}
+.step p{
+  text-align: center;
+  margin-bottom:0px;
+  display:inline;
+}
+.step:last-of-type {
+  margin-bottom: 40px;
+}
+.step div {
+  color: #2E1165;
+  border: 3px solid #1E0C41;
+  display: inline-block;
+  border-radius: 15%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  padding: 6px;
+  font-size: 150%;
+  margin-right: 25px;
+}
+.steps-box:last-child {
+  padding-left: 3%;
+}

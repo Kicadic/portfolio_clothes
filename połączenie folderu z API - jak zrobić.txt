@@ -1,0 +1,9 @@
+1. Utwórz folder, gdzie chcesz mieć pobierane zdj
+2. Wejdź w console cloud google
+3. W zakładce Interfejsy API i usługi znajdź konto usługi i skopiuj je
+4. Kliknij PPM w utworzony wcześniej folder, gdzie mają być przechowywane obrazy i wybierz Udostępnij.
+5. W wyszukiwarce wklej skopiowany adres gserviceaccount (konto usługi) i nadaj odpowiednie uprawnienia.
+6. W kodzie w pliku script.js uzupełnij folder ID i api Key
+
+- Wstaw ID folderu z Google Drive. FolderID znajduje się po adresie https://drive.google.com/drive/folders/
+- Wstaw swój klucz API Google. Znajdziesz go po ustawieniu Google Cloud. W Interfejsy API i usługi -> Dane logowania -> Klucze API.
