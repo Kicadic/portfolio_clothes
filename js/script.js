@@ -12,50 +12,49 @@ async function fetchImages() {
   const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`;
   const response = await fetch(url);
   const data = await response.json();
-  var increm = 0;
+  let increm = 0;
 
-  // Pobieramy wszystkie elementy z klasą 'gallery'
   const galleries = document.querySelectorAll('.gallery');
 
   galleries.forEach(gallery => {
     data.files.forEach(file => {
       if (file.mimeType.startsWith('image/')) {
+
+        // >>> Nowy kontener dla jednego obrazka
+        const imgContainer = document.createElement('div');
+        imgContainer.style.textAlign = 'center';
+        imgContainer.style.margin = '10px';
+        imgContainer.style.display = 'inline-block'; // aby ustawiały się obok siebie
+        imgContainer.style.verticalAlign = 'top'; 
+
         const imgElement = document.createElement('img');
         imgElement.src = `https://drive.google.com/thumbnail?id=${file.id}&sz=w1000`;
         imgElement.alt = file.name;
         imgElement.style.width = '300px';
         imgElement.style.height = '300px';
-        imgElement.style.margin = '10px';
-        
-        // Style numerowanie
-        gallery.appendChild(imgElement);
-        increm = increm + 1;
-        const numElement = document.createElement('p');
-        numElement.textContent = increm; 
-        numElement.style.top = '14px';
-        numElement.style.right = '27%';
-        numElement.style.position = 'relative';
-        numElement.style.height = '40px';
-        numElement.style.width = '40px';
-        numElement.style.color = '#2D1262';
-        numElement.style.fontSize = 'x-large';
-        numElement.style.borderRadius = '200px';
-        numElement.style.border = '2px solid #190D31';
-        numElement.style.display = 'inline-block';
-        numElement.style.textAlign = 'center';
-        numElement.style.fontWeight = '600';
-        numElement.style.backgroundImage = 'linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7))';
-        gallery.appendChild(numElement);
+        imgElement.style.display = 'block';
+        imgElement.style.marginBottom = '5px';
+
+        const fileNameWithoutExtension = file.name.split('.').slice(0, -1).join('.');
+        const textElement = document.createElement('p');
+        textElement.textContent = fileNameWithoutExtension;
+        textElement.style.margin = '5px 0';
+
+        // Dodajemy wszystko do kontenera pojedynczego obrazka
+        imgContainer.appendChild(imgElement);
+        imgContainer.appendChild(textElement);
+        // A teraz kontener do galerii
+        gallery.appendChild(imgContainer);
 
         // Obsługa kliknięcia - otwieranie modala
         imgElement.addEventListener('click', function () {
           modal.style.display = "block";
           modalImg.src = this.src;
           modalImg.style.cursor = 'auto';
-          // Usunięcie efektu opacity
           this.style.opacity = "1"; 
-          clickedImage = this; // Zapamiętaj, który obrazek został kliknięty
+          clickedImage = this;
         });
+
       } else {
         const textElement = document.createElement('p');
         textElement.textContent = `Plik: ${file.name}`;
@@ -64,6 +63,7 @@ async function fetchImages() {
     });
   });
 }
+
 
 // Zamknięcie modala po kliknięciu na "X"
 closeModal.addEventListener("click", function () {

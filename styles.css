@@ -154,8 +154,7 @@ ul > li a:active{
 
 .contact-footer li{
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin: 50px 40px 20px 40px;
 }
 
 .contact-footer li a:link,
@@ -278,20 +277,14 @@ ul > li a:active{
   margin-top: 10px;
   font-size: 18px;
 }
-/* ------------------------------------------------ */
-/* ABOUT */
-/* ------------------------------------------------ */
 
-.about{
-  padding-bottom:200px;
-}
 /* ------------------------------------------------ */
 /* FOOTER */
 /* ------------------------------------------------ */
 footer {
   background-color: #333;
   padding: 50px;
-  font-size: 80%;
+  font-size: 250%;
   display: flex;
   align-items: center; 
   gap: 10px; /* Odstęp między elementami */
@@ -300,35 +293,7 @@ footer {
 .dark-text{
   color:#333;
 }
-footer ul p{
+footer > ul > p{
   color: #fff;
-}
-/* ------------------------------------------------ */
-/* HOW IT WORKS? */
-/* ------------------------------------------------ */
-.step{
-  padding: 1.5%;
-}
-.step p{
   text-align: center;
-  margin-bottom:0px;
-  display:inline;
-}
-.step:last-of-type {
-  margin-bottom: 40px;
-}
-.step div {
-  color: #2E1165;
-  border: 3px solid #1E0C41;
-  display: inline-block;
-  border-radius: 15%;
-  height: 55px;
-  width: 55px;
-  text-align: center;
-  padding: 6px;
-  font-size: 150%;
-  margin-right: 25px;
-}
-.steps-box:last-child {
-  padding-left: 3%;
 }

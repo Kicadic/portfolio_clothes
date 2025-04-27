@@ -2,11 +2,8 @@
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      <meta name="vieport" content="width=device-width, initial-scale=1.0" />
-      <meta
-         name="description"
-         content="Clothes to sell"
-         />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Clothes portfolio" />
       <title>Galeria obrazów z Google Drive</title>
       <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" type="text/css" href="resources/css/normalize.css" />
@@ -17,95 +14,32 @@
       <link
          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
          rel="stylesheet"
-         />
-      <!-- Icon used under the MIT License. Copyright (c) 2024 Ionic -->
+      />
+      <!-- Stylowanie Ionic -->
+      <link href="https://cdn.jsdelivr.net/npm/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
+      <!-- Icons and other elements used under the MIT License. Copyright (c) 2024 Ionic -->
       <!--https://ionic.io-->
    </head>
    <body>
+      <!-- Ionic Core Web Components -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+      <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"></script>
+      
+      <ion-content>
       <header>
-            <div class="row">
-               <ul>
-                  <li>
-                     <a href="#">
-                        <ion-icon name="call-outline"></ion-icon>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#">
-                        <ion-icon name="mail-outline"></ion-icon>
-                     </a>
-                  </li>
-                </ul>
-               </div>
-               <section class="main">
-                  <h1>I am selling the best clothes second hand &mdash; check out my gallery.</h1>
-                  <br>
-                  <a class="btn btn-full" href="#gallery">Go to gallery</a>
-               </section>
-      </header>
-      <section class="row help span-3-of-4">
-      <h2 class="dark-text">How it works?</h2>
-      <div class="steps-box">
-      <div class="step">
-      <div>1</div>
-      <p>
-      Choose a product you are interested in from my gallery.
-      </p>
-      </div>
-      <div class="step">
-      <div>2</div>
-      <p>
-      Find me on social media.
-      </p>
-      </div>
-      <div class="step">
-      <div>3</div>
-      <p>
-      Text me, tell me the number of the product you are interested in. I will answer your questions and give you a price.
-      </p>
-      </div>
-      <div class="step">
-      <div>4</div>
-      <p>
-      If you accept the offer. I will give you a bank account to transfer money. I expect an address to send you a product.
-      </p>
-      </div>
-      </div>
-      </section>
-      </div>
-      <div class="gallery-color">
-        <section class="row span-3-of-4">
-               <h2 class="text-header dark-text">Gallery</h2>
-            <div id="gallery" class="gallery">
-            </div>
-            <div id="imageModal" class="modal" style="display: none;">
-               <span class="close">&times;</span>
-               <img class="modal-content" id="fullImage">
-               <div id="caption"></div>
-            </div>
-      </section>
-   </div>
-      </div>
-      <section class="row about span-3-of-4">
-         <h2 class="dark-text ">About me</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis ipsum sit amet dolor rhoncus semper. Fusce at elit sit amet velit viverra maximus in id metus. Suspendisse rhoncus fermentum dolor imperdiet ornare. Aliquam eu massa elementum, lobortis dui ut, cursus orci. Curabitur semper eget velit elementum fermentum. Nulla tincidunt massa eu commodo dictum. </p>
-      </section>
-      <footer>
-            <ul class="row contact-footer">
-               <p>Individual person. Text me on </p>
+         <div class="row">
+            <ul>
                <li>
                   <a href="#">
-                     <ion-icon name="call-outline"></ion-icon>
+                     <ion-icon id="click-trigger" name="call-outline"></ion-icon>
+
+                     <ion-popover 
+                        trigger="click-trigger" 
+                        trigger-action="click">
+                        <ion-content class="ion-padding">
+                           +48
+                        </ion-content>
+                     </ion-popover>
                   </a>
                </li>
                <li>
@@ -124,9 +58,52 @@
                   </a>
                </li>
             </ul>
+         </div>
+         <section class="main">
+            <h1>I am selling the best clothes second hand &mdash; check out my gallery.</h1>
+            <br>
+            <a class="btn btn-full" href="#gallery">Go to gallery</a>
+         </section>
+      </header>
+      </div>
+      <div class="gallery-color">
+         <section class="row span-3-of-4">
+            <h2 class="text-header dark-text">Gallery</h2>
+            <div id="gallery" class="gallery"></div>
+            <div id="imageModal" class="modal" style="display: none;">
+               <span class="close">&times;</span>
+               <img class="modal-content" id="fullImage">
+               <div id="caption"></div>
+            </div>
+         </section>
+      </div>
+      </div>
+      <footer>
+         <ul class="row contact-footer">
+            <p>Contact</p>
+            <li>
+               <a href="#">
+                  <ion-icon name="call-outline"></ion-icon>
+               </a>
+            </li>
+            <li>
+               <a href="#">
+                  <ion-icon name="logo-instagram"></ion-icon>
+               </a>
+            </li>
+            <li>
+               <a href="#">
+                  <ion-icon name="logo-facebook"></ion-icon>
+               </a>
+            </li>
+            <li>
+               <a href="#">
+                  <ion-icon name="mail-outline"></ion-icon>
+               </a>
+            </li>
+         </ul>
       </footer>
-      <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>      
-      <script src="js/script.js"></script> 
+      <script src="js/script.js"></script>
+   </ion-content>
    </body>
 </html>
