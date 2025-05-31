@@ -4,7 +4,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content="Clothes portfolio" />
-      <title>Galeria obrazów z Google Drive</title>
+      <title>Portfolio - szycie ubrań</title>
       <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" type="text/css" href="resources/css/normalize.css" />
       <link rel="stylesheet" type="text/css" href="resources/css/grid.css" />
@@ -60,16 +60,22 @@
             </ul>
          </div>
          <section class="main">
-            <h1>I am selling the best clothes second hand &mdash; check out my gallery.</h1>
+            <figure>
+               <img src="img/portret.jpg" alt="Person's photo">
+            </figure>
+            <h1>Hi! My name is Bartosz, and I specialize in sewing custom clothing. &mdash; check out my gallery.</h1>
             <br>
             <a class="btn btn-full" href="#gallery">Go to gallery</a>
          </section>
       </header>
-      </div>
+      <article class="row span-3-of-4">
+         <h2 class="dark-text">About me</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla libero ligula, ullamcorper ut hendrerit eget, sagittis sit amet orci. Suspendisse pharetra ex hendrerit tempus lacinia. Suspendisse porta arcu vel mi placerat rhoncus. Fusce venenatis, metus sed ultricies fringilla, diam orci accumsan nibh, sed faucibus elit tellus vel ipsum.</p>
+      </article>
       <div class="gallery-color">
          <section class="row span-3-of-4">
-            <h2 class="text-header dark-text">Gallery</h2>
-            <div id="gallery" class="gallery"></div>
+            <h2 class="dark-text">Gallery</h2>
+            <figure id="gallery" class="gallery"></figure>
             <div id="imageModal" class="modal" style="display: none;">
                <span class="close">&times;</span>
                <img class="modal-content" id="fullImage">
