@@ -12,9 +12,26 @@ body {
   color: #555;
   font-family: "Lato", "Arial", "sans-serif";
   font-weight: 300;
-  font-size: 20px;
+  font-size: 120%;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+@media (min-width: 480px) {
+  body {
+    font-size: 130%;
+  }
+}
+
+@media(min-width:768px){
+  body{
+    font-size: 140%;
+  }
+}
+
+@media(min-width:992px){
+  body{
+    font-size:150%;
+  }
 }
 .clearfix {
   zoom: 1;
@@ -36,7 +53,7 @@ body {
   margin: 0 auto;
 }
 section, article {
-  padding: 80px 0;
+  padding: 2.1rem;
 }
 .box {
   padding: 1%;
@@ -55,23 +72,50 @@ header {
   height: 100vh;
   background-attachment: fixed;
 }
+.header-media{
+  padding-bottom: 50px;
+}
 
 .main{
   position: absolute;
-  width: 1140px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90%;              /* domyślnie 90% szerokości okna */
+  max-width: 1140px;       /* ale nie więcej niż 1140px */
+  height: 90%;
+  padding:3%;
+  text-align: center;
+  margin-top:3rem;
 }
 .main h1{
   margin-bottom:25px;
 }
-figure > img{
-  height: 200px;
-  width: 200px;
-  border-radius: 100px 100px;
-  margin: 0px 0px 30px 0px;
+
+figure > img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin: 0 0 30px 0;
 }
+
+/* 📱 Dla bardzo małych ekranów (np. telefony) */
+@media (min-width: 480px) {
+  figure > img {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+}
+
+/* 📱 Dla małych ekranów (np. starsze tablety lub małe smartfony) */
+@media (min-width: 768px) {
+  figure > img {
+    max-width: 200px;
+  }
+}
+
 /* ------- HEADINGS ------*/
 h1,
 h2,
@@ -104,26 +148,25 @@ h2:after {
   margin-top: 20px;
 }
 /* ------------------------------------------------ */
-/* CONTACT */
+/* CONTACT MAIN */
 /* ------------------------------------------------ */
 ul > li{
   list-style: none;
   float: right;
   display: inline-block;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-right: 3%;
+  margin-top: 3%;
+  font-size:120%;
 }
 
 
 ul > li a:link,
 ul > li a:visited{
-  font-size:120%;
   color:#555;
 }
 
 ul > li a:link,
 ul > li a:visited{
-  font-size:120%;
   color:#555;
 }
 
@@ -132,21 +175,6 @@ ul > li a:active{
   color:#e7e7e7;
 }
 
-.contact-footer li{
-  display: inline-block;
-  margin: 50px 40px 20px 40px;
-}
-
-.contact-footer li a:link,
-.contact-footer li a:visited{
-  font-size:150%;
-  color:#BA2809;
-}
-
-.contact-footer li a:hover,
-.contact-footer li a:active{
-  color:#94240C;
-}
 
 /* ------- BUTTONS ------*/
 .btn:link,
@@ -276,17 +304,82 @@ article > p{
 /* ------------------------------------------------ */
 footer {
   background-color: #333;
-  padding: 50px;
-  font-size: 180%;
+  color: white;                 /* Dla lepszej czytelności na ciemnym tle */
+  padding: 1.25rem 0.8rem;
   display: flex;
-  align-items: center; 
-  gap: 10px; /* Odstęp między elementami */
+  align-items: center;
+  justify-content: center;
+  text-align: center;           /* Wyśrodkowanie tekstu */
+}
+@media (min-width: 480px) {
+  footer {
+    padding: 1.5rem 1rem;
+  }
 }
 
+@media(min-width:768px){
+  footer{
+    padding: 1.5rem 1.15rem;
+  }
+}
+
+@media(min-width:992px){
+  footer{
+    padding: 1.75rem 1.25rem;
+  }
+}
 .dark-text{
   color:#333;
 }
+
 footer > ul > p{
   color: #fff;
   text-align: center;
+}
+
+/* ------------------------------------------------ */
+/* FOOTER CONTACT */
+/* ------------------------------------------------ */
+
+.contact-footer > li{
+  display: inline-block;
+  margin: 0.75rem 1.25rem;
+  font-size:1.25rem;
+}
+
+@media(min-width:480px){
+  .contact-footer li,.contact-footer li a:link,
+.contact-footer li a:visited{
+    display: inline-block;
+    margin: 1rem 1.5rem;
+    font-size:1.55rem;
+  }
+}
+
+@media(min-width:768px){
+  .contact-footer li,.contact-footer li a:link,
+.contact-footer li a:visited{
+    display: inline-block;
+    margin: 1rem 2rem;
+    font-size:1.75rem;
+  }
+}
+
+@media(min-width:992px){
+  .contact-footer li,.contact-footer li a:link,
+.contact-footer li a:visited{
+    display: inline-block;
+    margin: 1.5rem 2.5rem;
+    font-size:2rem;
+  }
+}
+
+.contact-footer li a:link,
+.contact-footer li a:visited{
+  color:#BA2809;
+}
+
+.contact-footer li a:hover,
+.contact-footer li a:active{
+  color:#94240C;
 }
