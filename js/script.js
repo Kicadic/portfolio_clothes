@@ -12,7 +12,6 @@ async function fetchImages() {
   const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`;
   const response = await fetch(url);
   const data = await response.json();
-  let increm = 0;
 
   const galleries = document.querySelectorAll('.gallery');
 
@@ -39,6 +38,9 @@ async function fetchImages() {
         const textElement = document.createElement('p');
         textElement.textContent = fileNameWithoutExtension;
         textElement.style.margin = '5px 0';
+        textElement.style.maxWidth = '300px';
+        textElement.style.wordWrap = 'break-word';
+        textElement.style.textAlign = 'center';
 
         // Dodajemy wszystko do kontenera pojedynczego obrazka
         imgContainer.appendChild(imgElement);
@@ -51,6 +53,9 @@ async function fetchImages() {
           modal.style.display = "block";
           modalImg.src = this.src;
           modalImg.style.cursor = 'auto';
+          modalImg.style.height = '100vh';
+          modalImg.style.width = '100vh';
+          modalImg.style.textAlign = 'center';
           this.style.opacity = "1"; 
           clickedImage = this;
         });
